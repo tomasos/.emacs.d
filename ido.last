@@ -1,0 +1,61 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("c:/Prosjekt/Viewer/node_modules/" . "superagent/")
+ ("c:/Prosjekt/Viewer/" . "styles/")
+ ("c:/Prosjekt/" . "Viewer/")
+ ("c:/" . "Prosjekt/")
+ ("c:/Users/" . "tomosl/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "c:/Prosjekt/Viewer/styles/"
+ "c:/Prosjekt/Viewer/node_modules/superagent/"
+ "c:/Prosjekt/Viewer/scripts/"
+ "c:/Prosjekt/Viewer/modules/"
+ "c:/Prosjekt/Viewer/"
+ "c:/.emacs.d/"
+ "c:/Users/tomosl/Documents/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "style.css"
+ "superagent.js"
+ "viewer.js"
+ "viewer.jsx"
+ "index.html"
+ "workhours.el"
+ "init.el"
+ "timef\370ring.txt"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("c:/.emacs.d/" (21356 35122 0 0) "workhours.el~" "workhours.el" "url/" "init.el~" "init.el" "ido.last~" "ido.last" "elpa/" "auto-save-list/" "#init.el#" "../" "./")
+
+ ("c:/Prosjekt/Viewer/modules/" (21356 36561 0 0) "viewer.jsx~" "viewer.jsx" "../" "./")
+
+ ("c:/Prosjekt/Viewer/scripts/" (21355 35869 0 0) "react.js" "../" "./")
+
+ ("c:/Prosjekt/Viewer/styles/" (21355 32596 0 0) "../" "./")
+
+ ("c:/Prosjekt/Viewer/node_modules/superagent/" (21355 34196 0 0) "superagent.js" "Readme.md" "package.json" "node_modules/" "Makefile" "LICENSE" "lib/" "History.md" "docs/" "components/" "component.json" ".zuul.yml" ".travis.yml" ".npmignore" "../" "./")
+
+ ("c:/Prosjekt/Viewer/node_modules/" (21355 34195 0 0) "superagent/" "../" "./")
+
+ ("c:/Prosjekt/Viewer/" (21356 34735 0 0) "styles/" "scripts/" "node_modules/" "modules/" "index.html~" "index.html" "build/" "#index.html#" "../" "./")
+
+ ("c:/Prosjekt/" (21355 30210 0 0) "Viewer/" "Trunk/" "TrelloTest/" "Staging/" "PreProduction/" "PreProd/" "POC/" "OAP/" "Maptor/" "Local/" "Knowit.Applikator.WebTests/" "Knowit.ActiveDirectoryLogin.PackageConfigurations/" "Knowit.ActiveDirectoryLogin.DeploymentConfigurations/" "Knowit.ActiveDirectoryLogin/" "GE.EAI/" "DecisionTables/" "CoypuTests/" "ApplikatorGE/" "Applikator/" "../" "./")
+
+ ("c:/Users/tomosl/Documents/" (21355 30174 0 0) "WebTestor.docx" "VMBF/" "Visual Studio 2013/" "Visual Studio 2012/" "Visual Studio 2008/" "Visual Studio 2005/" "triks.txt" "trelloxml.xml" "trelloparsed.xml" "todo.txt~" "todo.txt" "timef\370ring.txt~" "timef\370ring.txt" "SQL Server Management Studio/" "Overf\370ing kontrakt.docx" "New Text Document.txt" "My Web Sites/" "My Videos/" "My Received Files/" "My Pictures/" "My Music/" "morewoodenships/" "MBF SE/" "L\370nn desember Tomas.pdf" "Integration Services Script Task/" "Integration Services Script Component/" "innlogging.txt" "Importark/" "IISExpress/" "hmm.xml" "hgignore_global.txt" "handlebarstest/" "gitignore_global.txt" "Forsikring i Gjensidige.pdf" "ff-template.xml" "Faggruppe/" "Excel.xlsx" "dt.zip" "desktop.ini" "Deployment.zip" "Default.rdp" "Custom Office Templates/" "codeparser.txt" "BMW SE/" "BMW DK/" "ApplikatorToView.xml" "99 bottles.html" "../" "./")
+
+ ("c:/Users/tomosl/" (21323 33234 0 0) "Videos/" "Templates/" "Start Menu/" "SendTo/" "Searches/" "Saved Games/" "Recent/" "PrintHood/" "Pictures/" "ntuser.pol" "ntuser.ini" "NTUSER.DAT{1abf8d6b-d6dc-11e1-9c97-a4badb276868}.TMContainer00000000000000000002.regtrans-ms" "NTUSER.DAT{1abf8d6b-d6dc-11e1-9c97-a4badb276868}.TMContainer00000000000000000001.regtrans-ms" "NTUSER.DAT{1abf8d6b-d6dc-11e1-9c97-a4badb276868}.TM.blf" "ntuser.dat.LOG2" "ntuser.dat.LOG1" "NTUSER.DAT" "NetHood/" "My Documents/" "Music/" "mercurial.ini" "Local Settings/" "Links/" "Favorites/" "Downloads/" "Documents/" "Desktop/" "Cookies/" "Contacts/" "Application Data/" "AppData/" ".rediscli_history" ".gitconfig" "#bleh#" "../" "./")
+
+ ("c:/Users/" (21290 46450 0 0) "tomosl/" "tomasos/" "rits/" "RedisService/" "Public/" "OAP/" "maptordev/" "desktop.ini" "DefaultAppPool/" "Default User/" "Default/" "decisiontables/" "Classic .NET AppPool/" "bmwdev/" "All Users/" "adlogin/" ".NET v4.5 Classic/" ".NET v4.5/" ".NET v2.0 Classic/" ".NET v2.0/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

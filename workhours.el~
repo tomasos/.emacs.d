@@ -1,0 +1,9 @@
+(defun calc-hours-worked ()
+  search-backward-regexp "" )
+
+
+(defun convert-to-decimal-time (time)
+  (+ (floor time) (/ (* 100 (- time (floor time))) 60)))
+
+(format " - %0.2f" (- (convert-to-decimal-time 13.45) (convert-to-decimal-time 09.30)))
+
