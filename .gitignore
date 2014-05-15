@@ -1,3 +1,6 @@
 # ignore all emacs backups
 *~
 \#*#
+elpa
+auto-save-list
+ido.last
