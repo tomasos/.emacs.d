@@ -4,6 +4,14 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (setq use-dialog-box nil)
+
+(add-to-list 'load-path user-emacs-directory)
+
+;; Save temp files in temp folder
+(setq backup-directory-alist
+          `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+          `((".*" ,temporary-file-directory t)))
  
 ;; BORING: Ensure everything is UTF-8 all the time
 (prefer-coding-system 'utf-8)
