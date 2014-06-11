@@ -56,6 +56,7 @@
 	color-theme-solarized
 	paredit
 	yasnippet
+	angular-snippets
 	))
 
 (dolist (package my-packages)
@@ -84,6 +85,7 @@
 
 ;; setup modes
 (require 'setup-yasnippet)
+(require 'angular-snippets)
 
 ;; map modes
 (require 'mode-mappings)
@@ -105,6 +107,13 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
  
 (global-set-key "\M-s" 'other-window)
+
+(global-set-key (kbd "C-'") 'comment-region)
+(global-set-key (kbd "C-\"") 'uncomment-region)
+
+(global-set-key (kbd "C-c C-w") 'web-mode-element-wrap)
+
+(global-unset-key "\C-x \C-c")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
