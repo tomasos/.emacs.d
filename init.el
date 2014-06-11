@@ -7,11 +7,15 @@
 
 (add-to-list 'load-path user-emacs-directory)
 
-;; Save temp files in temp folder
+;; set meta to cmd for mac
+(setq mac-option-modifier 'super)
+(setq mac-command-modifier 'meta)
+
+;;Save temp files in temp folder
 (setq backup-directory-alist
-          `((".*" . ,temporary-file-directory)))
+         `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
-          `((".*" ,temporary-file-directory t)))
+         `((".*" ,temporary-file-directory t)))
  
 ;; BORING: Ensure everything is UTF-8 all the time
 (prefer-coding-system 'utf-8)
@@ -65,7 +69,7 @@
 
 ;; Fire up the minor modes the theme we want going all the time everywhere
 (load-theme 'misterioso t)
-(global-undo-tree-mode)
+;;(global-undo-tree-mode)
 (ido-mode t)
 
 
@@ -134,18 +138,15 @@
 
 ;; calc hours worked
 (defun time-to-decimal (time)
-  (+ (floor time) (/ (* 100 (- time (floor time))) 60)))
+ (+ (floor time) (/ (* 100 (- time (floor time))) 60)))
  
 (defun calc-hours-worked ()
-  (interactive)
-  (setq line (buffer-substring-no-properties (line-beginning-position) (line-end-position)))
-  (string-match "[0-9]\\{2\\}\.[0-9]\\{2\\}" line)
-  (setq start (string-to-number (match-string 0 line)))
-  (string-match "[0-9]\\{2\\}\.[0-9]\\{2\\}" line 5)
-  (setq end (string-to-number (match-string 0 line)))
-  (insert (format "\t%0.2f" (- (time-to-decimal end) (time-to-decimal  start)))))
+ (interactive)
+ (setq line (buffer-substring-no-properties (line-beginning-position) (line-end-position)))
+ (string-match "[0-9]\\{2\\}\.[0-9]\\{2\\}" line)
+ (setq start (string-to-number (match-string 0 line)))
+ (string-match "[0-9]\\{2\\}\.[0-9]\\{2\\}" line 5)
+ (setq end (string-to-number (match-string 0 line)))
+ (insert (format "\t%0.2f" (- (time-to-decimal end) (time-to-decimal  start)))))
 
 (global-set-key (kbd "C-c C-h") 'calc-hours-worked)
-
-
-
