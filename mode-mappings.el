@@ -7,5 +7,8 @@
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . css-mode))
 
+;; HTML
+(add-to-list 'auto-mode-alist '("\\.cshtml\\'" . html-mode))
+
 (provide 'mode-mappings)
 
