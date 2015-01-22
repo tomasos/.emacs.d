@@ -8,8 +8,9 @@
 (add-to-list 'load-path user-emacs-directory)
 
 ;; set meta to cmd for mac
-(setq mac-option-modifier 'super)
-(setq mac-command-modifier 'meta)
+(setq mac-option-modifier nil
+      mac-command-modifier 'meta
+      x-select-enable-clipboard t)
 
 ;;Save temp files in temp folder
 (setq backup-directory-alist
@@ -50,10 +51,11 @@
       '(
 	ido
 	json
-	magit
 	js2-mode
-	web-mode
+	magit
 	undo-tree
+	clojure-mode
+	cider
 	expand-region
 	multiple-cursors
 	markdown-mode
@@ -71,7 +73,7 @@
 
 ;; Fire up the minor modes the theme we want going all the time everywhere
 (load-theme 'zenburn t)
-;;(global-undo-tree-mode)
+(global-undo-tree-mode)
 (ido-mode t)
 
 
