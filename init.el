@@ -7,10 +7,23 @@
 
 (add-to-list 'load-path user-emacs-directory)
 
+(add-to-list 'exec-path "C:/Program Files (x86)/Git/bin/")
+
 ;; set meta to cmd for mac
 (setq mac-option-modifier nil
       mac-command-modifier 'meta
       x-select-enable-clipboard t)
+
+;; use spaces
+(setq-default indent-tabs-mode nil)
+(setq tab-width 2)
+(setq js-indent-level 2)
+(setq-default js2-basic-offset 2)
+
+
+;; show folder name
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
 
 ;;Save temp files in temp folder
 (setq backup-directory-alist
@@ -37,7 +50,7 @@
 ;; Add the fantastic marmalade package repository to your lists to access hundreds of packages
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-			 ("marmalade" . "http://marmalade-repo.org/packages/")))
+			 ("melpa" . "http://melpa.org/packages/")))
 
 (dolist (source package-archives)
   (add-to-list 'package-archives source t))
@@ -52,13 +65,17 @@
 	ido
 	json
 	js2-mode
+        js2-refactor
 	magit
+        emmet-mode
 	undo-tree
+        auto-complete
 	clojure-mode
 	cider
 	expand-region
 	multiple-cursors
 	markdown-mode
+        neotree
 	color-theme-solarized
 	paredit
 	yasnippet
@@ -93,7 +110,6 @@
 
 ;; setup modes
 (require 'setup-yasnippet)
-(require 'angular-snippets)
 
 ;; map modes
 (require 'mode-mappings)
@@ -106,8 +122,11 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 (global-set-key (kbd "C-.") 'hippie-expand)
+(global-set-key (kbd "C-c C-f") 'vc-git-grep)
 
-(global-set-key "\C-c\C-d" "\C-a\C- \C-n\M-w\C-y")
+
+(global-set-key "\C-c\C-d" "\C-a\C- \C-e\M-w\C-n\C-a\C-o\C-y")
+
 
 ;; This one is kind of big, it reindents when hitting return. Something you usually need to do manually.
 (global-set-key (kbd "RET") 'reindent-then-newline-and-indent)
@@ -122,6 +141,8 @@
 (global-set-key (kbd "C-c C-w") 'sgml-tag)
 
 (global-unset-key "\C-x \C-c")
+
+(js2r-add-keybindings-with-prefix "C-c C-m")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
