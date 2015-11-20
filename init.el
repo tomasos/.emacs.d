@@ -1,3 +1,4 @@
+
 ;; Don't need buttons in emacs! By running this early we avoid a flash
 ;; of buttons before they are removed.
 (menu-bar-mode -1)
@@ -8,8 +9,8 @@
 (add-to-list 'load-path user-emacs-directory)
 
 ;; set meta to cmd for mac
-(setq mac-option-modifier nil
-      mac-command-modifier 'meta
+(setq mac-option-modifier 'meta
+      mac-command-modifier nil
       x-select-enable-clipboard t)
 
 ;;Save temp files in temp folder
@@ -37,7 +38,7 @@
 ;; Add the fantastic marmalade package repository to your lists to access hundreds of packages
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-			 ("marmalade" . "http://marmalade-repo.org/packages/")))
+			 ("melpa" . "http://melpa.org/packages/")))
 
 (dolist (source package-archives)
   (add-to-list 'package-archives source t))
@@ -121,7 +122,7 @@
 
 (global-set-key (kbd "C-c C-w") 'sgml-tag)
 
-(global-unset-key "\C-x \C-c")
+(global-unset-key (kbd "C-x C-c"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -151,6 +152,6 @@
  (setq start (string-to-number (match-string 0 line)))
  (string-match "[0-9]\\{2\\}\.[0-9]\\{2\\}" line 5)
  (setq end (string-to-number (match-string 0 line)))
- (insert (format "\t%0.2f" (- (time-to-decimal end) (time-to-decimal  start)))))
+ (insert (format "\t-- %0.2f" (- (time-to-decimal end) (time-to-decimal  start)))))
 
 (global-set-key (kbd "C-c C-h") 'calc-hours-worked)
