@@ -7,6 +7,7 @@
 
 (setq mc/cmds-to-run-once
       '(
+	beginning-of-buffer
 	js2-mode-show-node
 	suspend-frame
 	yas-expand
