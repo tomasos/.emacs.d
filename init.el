@@ -171,7 +171,7 @@
  (setq line (buffer-substring-no-properties (line-beginning-position) (line-end-position)))
  (string-match "[0-9]\\{2\\}\.[0-9]\\{2\\}" line)
  (setq start (string-to-number (match-string 0 line)))
- (string-match "[0-9]\\{2\\}\.[0-9]\\{2\\}" line 5)
+ (string-match "[0-9]\\{2\\}\.[0-9]\\{2\\}" line 10)
  (setq end (string-to-number (match-string 0 line)))
  (insert (format "\t-- %0.2f" (- (time-to-decimal end) (time-to-decimal  start)))))
 
