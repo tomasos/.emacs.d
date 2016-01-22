@@ -1,4 +1,4 @@
-;; Don't need buttons in emacs! By running this early we avoid a flash
+; Don't need buttons in emacs! By running this early we avoid a flash
 ;; of buttons before they are removed.
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -122,6 +122,7 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 (global-set-key (kbd "C-.") 'hippie-expand)
+(global-set-key (kbd "C-i") 'emmet-expand-line)
 (global-set-key (kbd "C-c C-f") 'vc-git-grep)
 
 
