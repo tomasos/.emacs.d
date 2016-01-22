@@ -123,6 +123,7 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 (global-set-key (kbd "C-.") 'hippie-expand)
+(global-set-key (kbd "C-i") 'emmet-expand-line)
 (global-set-key (kbd "C-c C-f") 'vc-git-grep)
 
 
