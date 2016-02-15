@@ -115,6 +115,8 @@
 ;; map modes
 (require 'mode-mappings)
 
+(electric-indent-mode -1)
+
 ;; Some keybindings for the extra packages and improved built-ins
 (global-set-key (kbd "C-=") 'er/expand-region)
  
@@ -123,7 +125,7 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 (global-set-key (kbd "C-.") 'hippie-expand)
-(global-set-key (kbd "C-i") 'emmet-expand-line)
+
 (global-set-key (kbd "C-c C-f") 'vc-git-grep)
 
 
