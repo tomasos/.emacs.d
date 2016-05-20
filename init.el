@@ -129,7 +129,7 @@
 (global-set-key (kbd "C-c C-f") 'vc-git-grep)
 
 
-(global-set-key "\C-c\C-d" "\C-a\C- \C-e\M-w\C-n\C-a\C-o\C-y")
+(global-set-key "\C-c\C-d" "\C-a\C- \C-e\M-w\C-m\C-y")
 
 
 ;; This one is kind of big, it reindents when hitting return. Something you usually need to do manually.
