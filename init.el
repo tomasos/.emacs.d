@@ -128,8 +128,11 @@
 
 (global-set-key (kbd "C-c C-f") 'vc-git-grep)
 
-
+;; duplicate line
 (global-set-key "\C-c\C-d" "\C-a\C- \C-e\M-w\C-m\C-y")
+
+;; copy line
+(global-set-key "\C-c\C-c" "\C-a\C- \C-e\M-w")
 
 
 ;; This one is kind of big, it reindents when hitting return. Something you usually need to do manually.

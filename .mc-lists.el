@@ -3,12 +3,15 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-	))
+        ))
 
 (setq mc/cmds-to-run-once
       '(
-	beginning-of-buffer
-	js2-mode-show-node
-	suspend-frame
-	yas-expand
-	))
+        beginning-of-buffer
+        end-of-buffer
+        js2-mode-show-node
+        org-return
+        org-self-insert-command
+        suspend-frame
+        yas-expand
+        ))
