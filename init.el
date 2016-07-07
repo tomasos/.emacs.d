@@ -63,24 +63,24 @@
 ;; Automatically install a bunch of useful packages. You should look read up about these.
 (setq my-packages
       '(
+	angular-snippets
+        auto-complete
+	cider
+	clojure-mode
+	color-theme-solarized
+        emmet-mode
+	expand-region
 	ido
-	json
 	js2-mode
         js2-refactor
+	json
 	magit
-        emmet-mode
-	undo-tree
-        auto-complete
-	clojure-mode
-	cider
-	expand-region
-	multiple-cursors
 	markdown-mode
+	multiple-cursors
         neotree
-	color-theme-solarized
 	paredit
+	undo-tree
 	yasnippet
-	angular-snippets
 	))
 
 (dolist (package my-packages)
@@ -126,7 +126,7 @@
 
 (global-set-key (kbd "C-.") 'hippie-expand)
 
-(global-set-key (kbd "C-c C-f") 'vc-git-grep)
+(global-set-key (kbd "C-c f") 'vc-git-grep)
 
 ;; duplicate line
 (global-set-key "\C-c\C-d" "\C-a\C- \C-e\M-w\C-m\C-y")
@@ -134,6 +134,20 @@
 ;; copy line
 (global-set-key "\C-c\C-c" "\C-a\C- \C-e\M-w")
 
+;; move lines
+(defun move-up()
+  (interactive)
+  (transpose-lines 1)
+  (forward-line -2))
+
+(defun move-down()
+  (interactive)
+  (forward-line 1)
+  (transpose-lines 1)
+  (forward-line -1))
+
+(global-set-key (kbd "M-<up>") 'move-up)
+(global-set-key (kbd "M-<down>") 'move-down)
 
 ;; This one is kind of big, it reindents when hitting return. Something you usually need to do manually.
 (global-set-key (kbd "RET") 'reindent-then-newline-and-indent)
@@ -159,7 +173,9 @@
  '(background-color "#002b36")
  '(background-mode dark)
  '(cursor-color "#839496")
- '(custom-safe-themes (quote ("5761d5d5f2084d6746eee15454e2b9bca9929c97571726811b58d22b78dd90d7" "0f9a2efd3212f60002bd224b430fa073845c1a5b5cc2e5be1bc93c7734a52daa" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
+ '(custom-safe-themes
+   (quote
+    ("0c387e27a3dd040b33c6711ff92e13bd952369a788eee97e4e4ea2335ac5528f" "01ce486c3a7c8b37cf13f8c95ca4bb3c11413228b35676025fdf239e77019ea1" "5761d5d5f2084d6746eee15454e2b9bca9929c97571726811b58d22b78dd90d7" "0f9a2efd3212f60002bd224b430fa073845c1a5b5cc2e5be1bc93c7734a52daa" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
  '(foreground-color "#839496"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
