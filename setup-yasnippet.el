@@ -10,4 +10,6 @@
 
 (setq yas-prompt-functions '(yas/ido-prompt yas/completing-prompt))
 
+(define-key yas-minor-mode-map (kbd "<C-tab>") 'yas-expand)
+
 (provide 'setup-yasnippet)

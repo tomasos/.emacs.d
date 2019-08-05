@@ -8,12 +8,17 @@
 
 (add-to-list 'load-path user-emacs-directory)
 
-(add-to-list 'exec-path "C:/Program Files (x86)/Git/bin/")
+;;(add-to-list 'exec-path "C:/Program Files (x86)/Git/bin/")
 
-;; set meta to cmd for mac
+;; set meta to alt for regular keyboard
 (setq mac-option-modifier 'meta
       mac-command-modifier nil
       x-select-enable-clipboard t)
+
+;; set meta to cmd for mac keyboard
+;; (setq mac-option-modifier nil
+;;      mac-command-modifier 'meta
+;;    x-select-enable-clipboard t)
 
 ;; use spaces
 (setq-default indent-tabs-mode nil)
@@ -68,8 +73,13 @@
 	cider
 	clojure-mode
 	color-theme-solarized
+        elm-mode
         emmet-mode
+        exec-path-from-shell
 	expand-region
+        fsharp-mode
+        fiplr
+        flycheck
 	ido
 	js2-mode
         js2-refactor
@@ -79,6 +89,7 @@
 	multiple-cursors
         neotree
 	paredit
+        prettier-js
 	undo-tree
 	yasnippet
 	))
@@ -89,11 +100,15 @@
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
+;; Set emacs path to shell path
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
+
+
 ;; Fire up the minor modes the theme we want going all the time everywhere
 (load-theme 'zenburn t)
 (global-undo-tree-mode)
 (ido-mode t)
-
 
 
 ;; Settings for ido. The most important one is fuzzy matching, like Sublime Text.
@@ -115,7 +130,7 @@
 ;; map modes
 (require 'mode-mappings)
 
-(electric-indent-mode -1)
+(electric-indent-mode 1)
 
 ;; Some keybindings for the extra packages and improved built-ins
 (global-set-key (kbd "C-=") 'er/expand-region)
@@ -128,11 +143,13 @@
 
 (global-set-key (kbd "C-c f") 'vc-git-grep)
 
+(global-set-key (kbd "C-x f") 'fiplr-find-file)
+
 ;; duplicate line
 (global-set-key "\C-c\C-d" "\C-a\C- \C-e\M-w\C-m\C-y")
 
 ;; copy line
-(global-set-key "\C-c\C-c" "\C-a\C- \C-e\M-w")
+(global-set-key "\C-c\C-l" "\C-a\C- \C-e\M-w")
 
 ;; move lines
 (defun move-up()
@@ -150,7 +167,7 @@
 (global-set-key (kbd "M-<down>") 'move-down)
 
 ;; This one is kind of big, it reindents when hitting return. Something you usually need to do manually.
-(global-set-key (kbd "RET") 'reindent-then-newline-and-indent)
+;; (global-set-key (kbd "RET") 'reindent-then-newline-and-indent)
  
 (global-set-key (kbd "C-x C-b") 'ibuffer)
  
@@ -197,4 +214,6 @@
  (setq end (string-to-number (match-string 0 line)))
  (insert (format "\t-- %0.2f" (- (time-to-decimal end) (time-to-decimal  start)))))
 
+
 (global-set-key (kbd "C-c C-h") 'calc-hours-worked)
+

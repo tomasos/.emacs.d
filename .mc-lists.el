@@ -3,15 +3,20 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        forward-sexp
+        org-shiftmetaright
         ))
 
 (setq mc/cmds-to-run-once
       '(
         beginning-of-buffer
         end-of-buffer
+        fiplr-find-file
+        ido-switch-buffer
         js2-mode-show-node
         org-return
         org-self-insert-command
+        save-some-buffers
         suspend-frame
         yas-expand
         ))

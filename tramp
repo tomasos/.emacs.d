@@ -1,6 +1,47 @@
-;; -*- emacs-lisp -*- <14/11/17 09:46:48 c:/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <19/06/17 08:50:37 /Users/tomas/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
-((["scpc" nil "xsl" nil nil]
+((["sudo" "root" "localhost" nil nil]
+  ("locale" "LC_ALL=C")
+  ("uname" "Darwin 16.1.0")
+  ("test" "test")
+  ("remote-path"
+   ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/bin"))
+  ("remote-shell" "/bin/sh")
+  ("~root" "/var/root")
+  ("ls" "/bin/ls")
+  ("ls-dired" nil)
+  ("stat" nil)
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 0)
+  ("file-exists" "test -e")
+  ("readlink" nil)
+  ("gid-string" "wheel")
+  ("uid-integer" 0)
+  ("git" "\\git"))
+ (["sudo" "root" "Tomass-MacBook-Pro.local" nil nil]
+  ("locale" "LC_ALL=C")
+  ("uname" "Darwin 18.5.0")
+  ("test" "test")
+  ("remote-path"
+   ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/bin"))
+  ("remote-shell" "/bin/sh")
+  ("ls" "/bin/ls")
+  ("ls-dired" nil)
+  ("stat" nil)
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 0)
+  ("file-exists" "test -e")
+  ("readlink" nil)
+  ("gid-string" "wheel")
+  ("uid-integer" 0)
+  ("git" "\\git"))
+ (["scp" nil "sudo" nil nil]
   nil))

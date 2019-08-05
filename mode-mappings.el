@@ -4,6 +4,12 @@
 (add-to-list 'auto-mode-alist '("\\.json\\'" . js2-mode))
 
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
+(add-hook 'js2-mode-hook 'emmet-mode)
+(add-hook 'js2-mode-hook 'prettier-js-mode)
+(add-hook 'js2-jsx-mode-hook 'prettier-js-mode)
+
+(add-to-list 'auto-mode-alist '("\\.elm\\'" . elm-mode))
+(add-hook 'elm-mode-hook #'elm-oracle-setup-ac)
 
 
  ;; Use lambda for anonymous functions
@@ -29,11 +35,16 @@
 
 ;; auto-complete
 (global-auto-complete-mode t)
-(setq ac-modes '(css-mode))
+(setq ac-modes '(css-mode js2-mode js2-jsx-mode))
 
 ;; HTML
 (add-to-list 'auto-mode-alist '("\\.cshtml\\'" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.hbs\\'" . html-mode))
 (add-hook 'html-mode-hook 'emmet-mode)
+
+;; fiplr
+(setq fiplr-ignored-globs '((directories (".git" ".svn" "node_modules"))
+                            (files ("*.*.orig"))))
 
 (provide 'mode-mappings)
 
