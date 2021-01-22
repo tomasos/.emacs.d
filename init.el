@@ -1,4 +1,20 @@
 
+(setenv  "PATH" (concat
+
+                ;; "c:/Windows/System32" ";" 
+
+                 "c:/Windows/Microsoft.NET/Framework/v4.0.30319" ";"
+
+                 "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319" ";"
+
+                 ;; Unix tools 
+                 "C:\\Program Files\\Git\\usr\\bin" ";"
+
+                 (getenv "PATH")
+
+                 ))
+
+
 ;; Don't need buttons in emacs! By running this early we avoid a flash
 ;; of buttons before they are removed.
 (menu-bar-mode -1)
@@ -90,6 +106,9 @@
         neotree
 	paredit
         prettier-js
+        web-mode
+        tide
+        tern
 	undo-tree
 	yasnippet
 	))
@@ -145,6 +164,9 @@
 
 (global-set-key (kbd "C-x f") 'fiplr-find-file)
 
+(global-set-key (kbd "C-x t f") 'tide-fix)
+(global-set-key (kbd "C-x t i") 'tide-organize-imports)
+
 ;; duplicate line
 (global-set-key "\C-c\C-d" "\C-a\C- \C-e\M-w\C-m\C-y")
 
@@ -182,6 +204,18 @@
 
 (js2r-add-keybindings-with-prefix "C-c C-m")
 
+(defun replace-class()
+  (interactive)
+  (query-replace-regexp "class=" "className=" nil nil nil nil nil))
+
+(global-set-key (kbd "C-x r c") 'replace-class)
+
+;; (defun goto-def()
+;;   (interactive)
+;;   (find-file-other-window (thing-at-point 'word) nil))
+
+;; (global-set-key (kbd "C-x g t") 'goto-def)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -193,7 +227,10 @@
  '(custom-safe-themes
    (quote
     ("0c387e27a3dd040b33c6711ff92e13bd952369a788eee97e4e4ea2335ac5528f" "01ce486c3a7c8b37cf13f8c95ca4bb3c11413228b35676025fdf239e77019ea1" "5761d5d5f2084d6746eee15454e2b9bca9929c97571726811b58d22b78dd90d7" "0f9a2efd3212f60002bd224b430fa073845c1a5b5cc2e5be1bc93c7734a52daa" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
- '(foreground-color "#839496"))
+ '(foreground-color "#839496")
+ '(package-selected-packages
+   (quote
+    (tern yaml-mode tide typescript-mode undo-tree prettier-js paredit neotree markdown-mode magit js2-refactor js2-mode fiplr fsharp-mode expand-region exec-path-from-shell emmet-mode elm-mode color-theme-solarized cider auto-complete angular-snippets))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -216,4 +253,8 @@
 
 
 (global-set-key (kbd "C-c C-h") 'calc-hours-worked)
+
+
+
+(global-set-key (kbd "C-c C-t") (kbd "C-SPC C-a M-w C-e C-x * q C-y RET = C-y"))
 

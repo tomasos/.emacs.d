@@ -1,16 +1,37 @@
+(require 'flycheck)
+
 ;; JavaScript
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
 (add-to-list 'auto-mode-alist '("\\.json\\'" . js2-mode))
 
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
 (add-hook 'js2-mode-hook 'emmet-mode)
 (add-hook 'js2-mode-hook 'prettier-js-mode)
+(add-hook 'js2-mode-hook 'tern-mode)
 (add-hook 'js2-jsx-mode-hook 'prettier-js-mode)
+(add-hook 'typescript-mode-hook 'prettier-js-mode)
+(add-hook 'typescript-mode-hook 'emmet-mode)
 
 (add-to-list 'auto-mode-alist '("\\.elm\\'" . elm-mode))
 (add-hook 'elm-mode-hook #'elm-oracle-setup-ac)
 
+(defun setup-tide-mode ()
+ (interactive)
+ (tide-setup)
+ (flycheck-mode +1)
+ (eldoc-mode +1)
+ (tide-hl-identifier-mode +1))
+
+(add-hook 'typescript-mode-hook #'setup-tide-mode)
+
+(add-hook 'typescript-mode-hook
+          (lambda ()
+            (when (string-equal "tsx" (file-name-extension buffer-file-name))
+              (setup-tide-mode))))
+(flycheck-add-mode 'typescript-tslint 'typescript-mode)
 
  ;; Use lambda for anonymous functions
  (font-lock-add-keywords
