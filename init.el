@@ -88,7 +88,7 @@
         auto-complete
 	cider
 	clojure-mode
-	color-theme-solarized
+	solarized-theme
         elm-mode
         emmet-mode
         exec-path-from-shell
@@ -106,6 +106,7 @@
         neotree
 	paredit
         prettier-js
+        spacemacs-theme
         web-mode
         tide
         tern
@@ -148,6 +149,8 @@
 
 ;; map modes
 (require 'mode-mappings)
+
+(require 'org-setup)
 
 (electric-indent-mode 1)
 
@@ -216,27 +219,35 @@
 
 ;; (global-set-key (kbd "C-x g t") 'goto-def)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(background-color "#002b36")
- '(background-mode dark)
- '(cursor-color "#839496")
- '(custom-safe-themes
-   (quote
-    ("0c387e27a3dd040b33c6711ff92e13bd952369a788eee97e4e4ea2335ac5528f" "01ce486c3a7c8b37cf13f8c95ca4bb3c11413228b35676025fdf239e77019ea1" "5761d5d5f2084d6746eee15454e2b9bca9929c97571726811b58d22b78dd90d7" "0f9a2efd3212f60002bd224b430fa073845c1a5b5cc2e5be1bc93c7734a52daa" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
- '(foreground-color "#839496")
- '(package-selected-packages
-   (quote
-    (tern yaml-mode tide typescript-mode undo-tree prettier-js paredit neotree markdown-mode magit js2-refactor js2-mode fiplr fsharp-mode expand-region exec-path-from-shell emmet-mode elm-mode color-theme-solarized cider auto-complete angular-snippets))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;; (custom-set-variables
+;;  ;; custom-set-variables was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(background-color "#002b36")
+;;  '(background-mode dark)
+;;  '(cursor-color "#839496")
+;;  '(custom-safe-themes
+;;    '("0c387e27a3dd040b33c6711ff92e13bd952369a788eee97e4e4ea2335ac5528f" "01ce486c3a7c8b37cf13f8c95ca4bb3c11413228b35676025fdf239e77019ea1" "5761d5d5f2084d6746eee15454e2b9bca9929c97571726811b58d22b78dd90d7" "0f9a2efd3212f60002bd224b430fa073845c1a5b5cc2e5be1bc93c7734a52daa" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default))
+;;  '(foreground-color "#839496")
+;;  '(package-selected-packages
+;;    '(spacemacs-theme tern yaml-mode tide typescript-mode undo-tree prettier-js paredit neotree markdown-mode magit js2-refactor js2-mode fiplr fsharp-mode expand-region exec-path-from-shell emmet-mode elm-mode solarized-theme cider auto-complete angular-snippets)))
+;; (custom-set-faces
+;;  ;; custom-set-faces was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(fixed-pitch ((t (:family "Fira Mono" :height 100))))
+;;  '(org-document-title ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "ETBembo" :height 2.0 :underline nil))))
+;;  '(org-level-1 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "ETBembo" :height 1.5))))
+;;  '(org-level-2 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "ETBembo" :height 1.25))))
+;;  '(org-level-3 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "ETBembo" :height 1.15))))
+;;  '(org-level-4 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "ETBembo" :height 1.1))))
+;;  '(org-level-5 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "ETBembo"))))
+;;  '(org-level-6 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "ETBembo"))))
+;;  '(org-level-7 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "ETBembo"))))
+;;  '(org-level-8 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "ETBembo"))))
+;;  '(variable-pitch ((t (:family "ETBembo" :height 120 :weight thin)))))
 
 ;; calc hours worked
 (defun time-to-decimal (time)
@@ -257,4 +268,38 @@
 
 
 (global-set-key (kbd "C-c C-t") (kbd "C-SPC C-a M-w C-e C-x * q C-y RET = C-y"))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(company web-mode undo-tree tide tern spacemacs-theme solarized-theme prettier-js paredit neotree markdown-mode magit js2-refactor fsharp-mode fiplr expand-region exec-path-from-shell emmet-mode elm-mode cider auto-complete angular-snippets)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(fixed-pitch ((t (:family "Fira Mono" :height 120))))
+ '(org-document-title ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "Verdana" :height 1.5 :underline nil))))
+ '(org-level-1 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "Verdana" :height 1.75))))
+ '(org-level-2 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "Verdana" :height 1.5))))
+ '(org-level-3 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "Verdana" :height 1.25))))
+ '(org-level-4 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "Verdana" :height 1.1))))
+ '(org-level-5 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "Verdana"))))
+ '(org-level-6 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "Verdana"))))
+ '(org-level-7 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "Verdana"))))
+ '(org-level-8 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "Verdana"))))
+ '(variable-pitch ((t (:family "Source Sans Pro" :height 120 :weight thin)))))
+
+(defun set-buffer-variable-pitch ()
+    (interactive)
+    (variable-pitch-mode t)
+    (setq line-spacing 3)
+     (set-face-attribute 'org-table nil :inherit 'fixed-pitch)
+     (set-face-attribute 'org-code nil :inherit 'fixed-pitch)
+    )
+
+  (add-hook 'org-mode-hook 'set-buffer-variable-pitch)
 

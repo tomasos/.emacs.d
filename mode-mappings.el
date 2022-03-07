@@ -10,10 +10,10 @@
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
 (add-hook 'js2-mode-hook 'emmet-mode)
 (add-hook 'js2-mode-hook 'prettier-js-mode)
-(add-hook 'js2-mode-hook 'tern-mode)
 (add-hook 'js2-jsx-mode-hook 'prettier-js-mode)
 (add-hook 'typescript-mode-hook 'prettier-js-mode)
 (add-hook 'typescript-mode-hook 'emmet-mode)
+;; (add-hook 'typescript-mode-hook 'tern-mode)
 
 (add-to-list 'auto-mode-alist '("\\.elm\\'" . elm-mode))
 (add-hook 'elm-mode-hook #'elm-oracle-setup-ac)
@@ -23,7 +23,8 @@
  (tide-setup)
  (flycheck-mode +1)
  (eldoc-mode +1)
- (tide-hl-identifier-mode +1))
+ (tide-hl-identifier-mode +1)
+ (company-mode +1))
 
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
 
@@ -53,6 +54,7 @@
 (add-to-list 'auto-mode-alist '("\\.less\\'" . css-mode))
 
 (add-hook 'css-mode-hook 'emmet-mode)
+(add-hook 'css-mode-hook 'prettier-js-mode)
 
 ;; auto-complete
 (global-auto-complete-mode t)
@@ -64,8 +66,9 @@
 (add-hook 'html-mode-hook 'emmet-mode)
 
 ;; fiplr
-(setq fiplr-ignored-globs '((directories (".git" ".svn" "node_modules"))
+(setq fiplr-ignored-globs '((directories (".git" ".svn" "node_modules" "env"))
                             (files ("*.*.orig"))))
+
 
 (provide 'mode-mappings)
 

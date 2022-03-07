@@ -3,7 +3,11 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        end-of-visual-line
         forward-sexp
+        org-delete-char
+        org-force-self-insert
+        org-metaright
         org-shiftmetaright
         ))
 
