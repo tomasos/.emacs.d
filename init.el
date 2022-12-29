@@ -1,18 +1,18 @@
 
-(setenv  "PATH" (concat
+;; (setenv  "PATH" (concat
 
-                ;; "c:/Windows/System32" ";" 
+;;                 ;; "c:/Windows/System32" ";" 
 
-                 "c:/Windows/Microsoft.NET/Framework/v4.0.30319" ";"
+;;                  "c:/Windows/Microsoft.NET/Framework/v4.0.30319" ";"
 
-                 "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319" ";"
+;;                  "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319" ";"
 
-                 ;; Unix tools 
-                 "C:\\Program Files\\Git\\usr\\bin" ";"
+;;                  ;; Unix tools 
+;;                  "C:\\Program Files\\Git\\usr\\bin" ";"
 
-                 (getenv "PATH")
+;;                  (getenv "PATH")
 
-                 ))
+;;                  ))
 
 
 ;; Don't need buttons in emacs! By running this early we avoid a flash
@@ -22,19 +22,19 @@
 (scroll-bar-mode -1)
 (setq use-dialog-box nil)
 
-(add-to-list 'load-path user-emacs-directory)
+(add-to-list 'load-path "~/.emacs.d/setup")
 
 ;;(add-to-list 'exec-path "C:/Program Files (x86)/Git/bin/")
 
 ;; set meta to alt for regular keyboard
-(setq mac-option-modifier 'meta
-      mac-command-modifier nil
-      x-select-enable-clipboard t)
+;; (setq mac-option-modifier 'meta
+;;       mac-command-modifier nil
+;;       x-select-enable-clipboard t)
 
 ;; set meta to cmd for mac keyboard
-;; (setq mac-option-modifier nil
-;;      mac-command-modifier 'meta
-;;    x-select-enable-clipboard t)
+(setq mac-option-modifier nil
+     mac-command-modifier 'meta
+   x-select-enable-clipboard t)
 
 ;; use spaces
 (setq-default indent-tabs-mode nil)
@@ -42,6 +42,9 @@
 (setq js-indent-level 2)
 (setq-default js2-basic-offset 2)
 
+
+;; split settings
+(setq split-height-threshold nil)
 
 ;; show folder name
 (require 'uniquify)
@@ -88,6 +91,7 @@
         auto-complete
 	cider
 	clojure-mode
+        company
 	solarized-theme
         elm-mode
         emmet-mode
@@ -197,6 +201,7 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
  
 (global-set-key "\M-s" 'other-window)
+(global-set-key "\M-p" 'windmove-swap-states-left)
 
 (global-set-key (kbd "C-'") 'comment-region)
 (global-set-key (kbd "C-\"") 'uncomment-region)
@@ -205,7 +210,7 @@
 
 (global-unset-key (kbd "C-x C-c"))
 
-(js2r-add-keybindings-with-prefix "C-c C-m")
+(js2r-add-keybindings-with-prefix "C-c C-r")
 
 (defun replace-class()
   (interactive)
@@ -281,17 +286,22 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(fixed-pitch ((t (:family "Fira Mono" :height 120))))
- '(org-document-title ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "Verdana" :height 1.5 :underline nil))))
- '(org-level-1 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "Verdana" :height 1.75))))
- '(org-level-2 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "Verdana" :height 1.5))))
- '(org-level-3 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "Verdana" :height 1.25))))
- '(org-level-4 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "Verdana" :height 1.1))))
- '(org-level-5 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "Verdana"))))
- '(org-level-6 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "Verdana"))))
- '(org-level-7 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "Verdana"))))
- '(org-level-8 ((t (:inherit default :weight bold :foreground "#DCDCCC" :font "Verdana"))))
- '(variable-pitch ((t (:family "Source Sans Pro" :height 120 :weight thin)))))
+ '(fixed-pitch ((t (:family "Fira Mono" :height 1.0))))
+ '(org-document-title ((t (:inherit default :weight bold :font "Source Sans Pro" :height 1.5 :underline nil))))
+ '(org-level-1 ((t (:inherit default :weight bold :font "Source Sans Pro" :height 1.75))))
+ '(org-level-2 ((t (:inherit default :weight bold :font "Source Sans Pro" :height 1.5))))
+ '(org-level-3 ((t (:inherit default :weight bold :font "Source Sans Pro" :height 1.25))))
+ '(org-level-4 ((t (:inherit default :weight bold :font "Source Sans Pro" :height 1.1))))
+ '(org-level-5 ((t (:inherit default :weight bold :font "Source Sans Pro"))))
+ '(org-level-6 ((t (:inherit default :weight bold :font "Source Sans Pro"))))
+ '(org-level-7 ((t (:inherit default :weight bold :font "Source Sans Pro"))))
+ '(org-level-8 ((t (:inherit default :weight bold :font "Source Sans Pro"))))
+ '(variable-pitch ((t (:family "Source Sans Pro" :height 1.1 :weight normal)))))
+
+(set-face-attribute 'default nil :height 130)
+
+(setq-default left-margin-width 2 right-margin-width 2)
+
 
 (defun set-buffer-variable-pitch ()
     (interactive)

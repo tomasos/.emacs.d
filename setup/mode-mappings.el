@@ -3,16 +3,17 @@
 ;; JavaScript
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
 (add-to-list 'auto-mode-alist '("\\.json\\'" . js2-mode))
 
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
 (add-hook 'js2-mode-hook 'emmet-mode)
 (add-hook 'js2-mode-hook 'prettier-js-mode)
-(add-hook 'js2-jsx-mode-hook 'prettier-js-mode)
-(add-hook 'typescript-mode-hook 'prettier-js-mode)
-(add-hook 'typescript-mode-hook 'emmet-mode)
+(add-hook 'js-mode-hook 'prettier-js-mode)
+(add-hook 'js-mode-hook 'emmet-mode)
+(add-hook 'js-mode-hook 'js2-minor-mode)
+
 ;; (add-hook 'typescript-mode-hook 'tern-mode)
 
 (add-to-list 'auto-mode-alist '("\\.elm\\'" . elm-mode))
@@ -34,6 +35,8 @@
               (setup-tide-mode))))
 (flycheck-add-mode 'typescript-tslint 'typescript-mode)
 
+(setq company-idle-delay 0)
+
  ;; Use lambda for anonymous functions
  (font-lock-add-keywords
   'js2-mode `(("\\(function\\) *("
@@ -47,6 +50,9 @@
                (0 (progn (compose-region (match-beginning 1)
                                          (match-end 1) "\u2190")
                          nil)))))
+
+(add-hook 'typescript-mode-hook 'prettier-js-mode)
+(add-hook 'typescript-mode-hook 'emmet-mode)
 
 ;; CSS
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))

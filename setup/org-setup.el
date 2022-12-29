@@ -28,8 +28,8 @@
 
 (custom-theme-set-faces
  'user
- '(variable-pitch ((t (:family "Source Sans Pro" :height 120 :weight thin))))
- '(fixed-pitch ((t ( :family "Fira Mono" :height 120)))))
+ '(variable-pitch ((t (:family "Source Sans Pro" :height 1.1 :weight normal))))
+ '(fixed-pitch ((t ( :family "Fira Mono" :height 1.0)))))
 
 (setq org-hide-emphasis-markers t)
 
