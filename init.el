@@ -55,7 +55,10 @@
          `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
          `((".*" ,temporary-file-directory t)))
- 
+
+;; Save undo files one place
+(setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
+
 ;; BORING: Ensure everything is UTF-8 all the time
 (prefer-coding-system 'utf-8)
 (setq locale-coding-system 'utf-8)
@@ -131,6 +134,7 @@
 
 ;; Fire up the minor modes the theme we want going all the time everywhere
 (load-theme 'zenburn t)
+(setq neo-theme 'nerd)
 (global-undo-tree-mode)
 (ido-mode t)
 
@@ -210,13 +214,27 @@
 
 (global-unset-key (kbd "C-x C-c"))
 
-(js2r-add-keybindings-with-prefix "C-c C-r")
+(global-set-key (kbd "C-c C-f") 'tide-references)
+
+;; (js2r-add-keybindings-with-prefix "C-c C-r")
 
 (defun replace-class()
   (interactive)
   (query-replace-regexp "class=" "className=" nil nil nil nil nil))
 
 (global-set-key (kbd "C-x r c") 'replace-class)
+
+
+(defun log-this()
+  (interactive)
+  (setq var (thing-at-point 'word 'no-properties))
+  (search-forward ";")
+  (end-of-line)
+  (newline)
+  (insert (format "console.log(\"%s is\", %s);" var var)))
+
+(global-set-key (kbd "C-c C-l") 'log-this)
+  
 
 ;; (defun goto-def()
 ;;   (interactive)
@@ -263,7 +281,7 @@
  (setq line (buffer-substring-no-properties (line-beginning-position) (line-end-position)))
  (string-match "[0-9]\\{2\\}\.[0-9]\\{2\\}" line)
  (setq start (string-to-number (match-string 0 line)))
- (string-match "[0-9]\\{2\\}\.[0-9]\\{2\\}" line 10)
+ (string-match "[0-9]\\{2\\}\.[0-9]\\{2\\}" line (match-end 0))
  (setq end (string-to-number (match-string 0 line)))
  (insert (format "\t-- %0.2f" (- (time-to-decimal end) (time-to-decimal  start)))))
 
@@ -307,7 +325,7 @@
     (interactive)
     (variable-pitch-mode t)
     (setq line-spacing 3)
-     (set-face-attribute 'org-table nil :inherit 'fixed-pitch)
+     (set-face-attribute 'org-table nil :kinherit 'fixed-pitch)
      (set-face-attribute 'org-code nil :inherit 'fixed-pitch)
     )
 

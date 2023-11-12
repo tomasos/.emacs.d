@@ -6,6 +6,7 @@
         end-of-visual-line
         forward-sexp
         org-delete-char
+        org-end-of-line
         org-force-self-insert
         org-metaright
         org-shiftmetaright
